@@ -1,0 +1,169 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.inner, .header__inner {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.gb-container {
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  height: 100px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.404);
+}
+
+.header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .gbMenu-pc {
+  display: none;
+}
+
+.mainVisual {
+  height: 900px;
+  background-color: #928f60;
+}
+
+.mainVisual__img {
+  height: 100%;
+  position: relative;
+  background-image: url(/img/bg/mainView.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mainVisual__textArea {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.mainVisual__textArea .ttl {
+  margin-bottom: 24px;
+  font-size: 2.8rem;
+}
+
+.mainVisual__textArea .subttl {
+  font-size: 1.4rem;
+}
+
+section {
+  height: 900px;
+  width: 100%;
+}
+
+.section__about {
+  position: absolute;
+  background-color: black;
+}
+
+.section__about .aboutImg {
+  position: absolute;
+  bottom: 0;
+  left: -200px;
+  height: 100%;
+  width: 100%;
+  background: url(/img/bg/bg-lion.svg);
+  background-size: 76%;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.section__about .jointImgTop {
+  position: absolute;
+  top: -455px;
+  left: 0;
+  z-index: 40;
+  height: 100%;
+  width: 100%;
+  background: url(/img/bg/tree-woods_left.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: rotate(-3deg) scale(1.1);
+          transform: rotate(-3deg) scale(1.1);
+}
+
+.section__about .jointImgBottom {
+  position: absolute;
+  bottom: -455px;
+  left: 0;
+  z-index: 40;
+  height: 100%;
+  width: 100%;
+  background: url(/img/bg/tree-woods_right.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: rotate(-3deg) scale(1.1);
+          transform: rotate(-3deg) scale(1.1);
+}
+
+.section__feture {
+  background-color: #c24a4a;
+}
+
+.section__works {
+  position: absolute;
+  top: 2700px;
+  background-color: #2e7a2e;
+}
+
+.section__works .jointImgTop {
+  position: absolute;
+  top: -455px;
+  left: 0;
+  z-index: 40;
+  height: 100%;
+  width: 100%;
+  background: url(/img/bg/tree-woods_left.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: rotate(-3deg) scale(1.1);
+          transform: rotate(-3deg) scale(1.1);
+}
+
+.section__works .jointImgBottom {
+  position: absolute;
+  bottom: -455px;
+  left: 0;
+  z-index: 40;
+  height: 100%;
+  width: 100%;
+  background: url(/img/bg/tree-woods_right.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: rotate(-3deg) scale(1.1);
+          transform: rotate(-3deg) scale(1.1);
+}
+
+.section__contact {
+  background-color: #4a4aac;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,147 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.inner {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+}
+.gb-container {
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    height: 100px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.404);
+    &__inner {
+        @extend .inner;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    & .gbMenu-mobile {
+
+    }
+    & .gbMenu-pc {
+        display: none;
+    }
+}
+
+.mainVisual {
+    height: 900px;
+    background-color: rgb(146, 143, 96);
+    &__img {
+        height: 100%;
+        position: relative;
+        background-image: url(/img/bg/mainView.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &__textArea {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        & .ttl {
+            margin-bottom: 24px;
+            font-size: 2.8rem;
+        }
+        & .subttl {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+section {
+    height: 900px;
+    width: 100%;
+}
+.section {
+    &__about {
+        position: absolute;
+        background-color: rgb(0, 0, 0);
+        & .aboutImg {
+            position: absolute;
+            bottom: 0;
+            left: -200px;
+            height: 100%;
+            width: 100%;
+            background: url(/img/bg/bg-lion.svg);
+            background-size: 76%;
+            background-position: left;
+            background-repeat: no-repeat;
+        }
+        & .jointImgTop {
+            position: absolute;
+            top: -455px;
+            left: 0;
+            z-index: 40;
+            height: 100%;
+            width: 100%;
+            background: url(/img/bg/tree-woods_left.svg);
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: rotate(-3deg) scale(1.1);
+        }
+        & .jointImgBottom {
+            position: absolute;
+            bottom: -455px;
+            left: 0;
+            z-index: 40;
+            height: 100%;
+            width: 100%;
+            background: url(/img/bg/tree-woods_right.svg);
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: rotate(-3deg) scale(1.1);
+        }
+    }
+    &__feture {
+        background-color: rgb(194, 74, 74);
+    }
+    &__works {
+        position: absolute;
+        top: 2700px;
+        background-color: rgb(46, 122, 46);
+        & .jointImgTop {
+            position: absolute;
+            top: -455px;
+            left: 0;
+            z-index: 40;
+            height: 100%;
+            width: 100%;
+            background: url(/img/bg/tree-woods_left.svg);
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: rotate(-3deg) scale(1.1);
+        }
+        & .jointImgBottom {
+            position: absolute;
+            bottom: -455px;
+            left: 0;
+            z-index: 40;
+            height: 100%;
+            width: 100%;
+            background: url(/img/bg/tree-woods_right.svg);
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: rotate(-3deg) scale(1.1);
+        }
+    }
+    &__contact {
+        background-color: rgb(74, 74, 172);
+    }
+}

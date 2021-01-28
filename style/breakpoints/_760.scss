@@ -1,0 +1,26 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    height: 120px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.404);
+    &__inner {
+        @extend .inner;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    & .gbMenu-mobile {
+        display: none;
+    }
+    & .gbMenu-pc {
+        
+    }
+}
+
+section {
+    height: 900px;
+    width: 100%;
+}
