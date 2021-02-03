@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: sans-serif;
   margin: 0;
@@ -14,12 +15,16 @@ body {
   overflow: hidden;
 }
 
+.container {
+  position: relative;
+}
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 50;
-  height: 100px;
+  height: 90px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.404);
 }
@@ -36,12 +41,17 @@ body {
           align-items: center;
 }
 
+.header__inner .logo {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
 .header .gbMenu-pc {
   display: none;
 }
 
 .mainVisual {
-  height: 900px;
+  height: 100vh;
   background-color: #928f60;
 }
 
@@ -72,7 +82,7 @@ body {
 }
 
 section {
-  height: 900px;
+  height: 100vh;
   width: 100%;
 }
 
@@ -84,86 +94,136 @@ section {
 .section__about .aboutImg {
   position: absolute;
   bottom: 0;
-  left: -200px;
-  height: 100%;
+  left: -40px;
+  height: 80%;
   width: 100%;
-  background: url(/img/bg/bg-lion.svg);
-  background-size: 76%;
+  background: url(/img/img/探検家-wh.png);
   background-position: left;
   background-repeat: no-repeat;
 }
 
-.section__about .jointImgTop {
-  position: absolute;
-  top: -455px;
-  left: 0;
-  z-index: 40;
-  height: 100%;
-  width: 100%;
-  background: url(/img/bg/tree-woods_left.svg);
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-transform: rotate(-3deg) scale(1.1);
-          transform: rotate(-3deg) scale(1.1);
+.section__about .aboutImg .textArea {
+  margin-left: 60%;
+  color: white;
 }
 
-.section__about .jointImgBottom {
-  position: absolute;
-  bottom: -455px;
-  left: 0;
-  z-index: 40;
-  height: 100%;
-  width: 100%;
-  background: url(/img/bg/tree-woods_right.svg);
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-transform: rotate(-3deg) scale(1.1);
-          transform: rotate(-3deg) scale(1.1);
+.section__about .aboutImg .textArea .ttl {
+  font-size: 2.8rem;
+  margin-bottom: 36px;
+}
+
+.section__about .aboutImg .textArea .discription {
+  font-size: 1.4rem;
 }
 
 .section__feture {
   background-color: #c24a4a;
 }
 
+.section__feture .fetureImg {
+  height: 100%;
+  width: 100%;
+  background: url(/img/img/オオカミ達-wh.png);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.section__feture .fetureImg .textArea {
+  margin-left: 10%;
+  padding-top: 160px;
+  color: white;
+}
+
+.section__feture .fetureImg .textArea .ttl {
+  font-size: 2.8rem;
+  margin-bottom: 36px;
+}
+
+.section__feture .fetureImg .textArea .discription {
+  font-size: 1.4rem;
+}
+
 .section__works {
   position: absolute;
-  top: 2700px;
+  top: 300vh;
   background-color: #2e7a2e;
 }
 
-.section__works .jointImgTop {
+.section__works .worksImg {
   position: absolute;
-  top: -455px;
-  left: 0;
-  z-index: 40;
-  height: 100%;
+  bottom: 0;
+  left: -40px;
+  height: 80%;
   width: 100%;
-  background: url(/img/bg/tree-woods_left.svg);
-  background-size: 100%;
-  background-position: center;
+  background: url(/img/img/探検家-wh.png);
+  background-position: left;
   background-repeat: no-repeat;
-  -webkit-transform: rotate(-3deg) scale(1.1);
-          transform: rotate(-3deg) scale(1.1);
 }
 
-.section__works .jointImgBottom {
-  position: absolute;
-  bottom: -455px;
-  left: 0;
-  z-index: 40;
-  height: 100%;
-  width: 100%;
-  background: url(/img/bg/tree-woods_right.svg);
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-transform: rotate(-3deg) scale(1.1);
-          transform: rotate(-3deg) scale(1.1);
+.section__works .worksImg .textArea {
+  margin-left: 60%;
+  color: white;
+}
+
+.section__works .worksImg .textArea .ttl {
+  font-size: 2.8rem;
+  margin-bottom: 36px;
+}
+
+.section__works .worksImg .textArea .discription {
+  font-size: 1.4rem;
 }
 
 .section__contact {
   background-color: #4a4aac;
+}
+
+.section__contact .contactImg {
+  height: 100%;
+  width: 100%;
+  background: url(/img/img/オオカミ達-wh.png);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.section__contact .contactImg .textArea {
+  margin-left: 10%;
+  padding-top: 160px;
+  color: white;
+}
+
+.section__contact .contactImg .textArea .ttl {
+  font-size: 2.8rem;
+  margin-bottom: 36px;
+}
+
+.section__contact .contactImg .textArea .discription {
+  font-size: 1.4rem;
+}
+
+.jointIMG, .jointImgTop, .jointImgBottom {
+  position: absolute;
+  left: 0;
+  z-index: 40;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: rotate(-3deg) scale(1.1);
+          transform: rotate(-3deg) scale(1.1);
+}
+
+.jointImgTop {
+  top: -53vh;
+  background: url(/img/bg/tree-woods_left.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.jointImgBottom {
+  top: 53vh;
+  background: url(/img/bg/tree-woods_right.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 /*# sourceMappingURL=style.css.map */
