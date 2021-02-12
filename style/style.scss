@@ -1,3 +1,5 @@
+@import 'modules/mixin';
+
 body {
     font-family: sans-serif;
     margin: 0;
@@ -34,10 +36,17 @@ body {
         }
     }
     & .gbMenu-mobile {
-
+        display: none;
     }
     & .gbMenu-pc {
-        display: none;
+        & ul {
+            display: flex;
+            list-style: none;
+            & li{
+                color: white;
+                margin-right: 8px;
+            }
+        }
     }
 }
 
@@ -66,8 +75,46 @@ body {
             font-size: 1.4rem;
         }
     }
+    &__footer {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%) scale(.3);
+        & ul {
+            list-style: none;
+            & li {
+                opacity: 0;
+                @include animation(
+                    $name: kf-anime-footprint,
+                    $iteration-count: infinite,
+                    $duration: 4.8s,
+                    $timing-function: linear
+                );
+                @for $i from 1 through 3 {
+                    &:nth-child(#{$i}) {
+                      animation-delay: $i * 0.8s;
+                    }
+                }
+                &:nth-of-type(even){
+                    & .footprint {
+                        transform: translateX(50px);
+                    }
+                }
+                & .footprint {
+                    transform: translateX(-50px);
+                }
+            }
+        }
+    }
 }
-
+@keyframes kf-anime-footprint {
+    0%, 20%, 80%, 100% {
+        opacity: 0;
+    }
+    30%, 70% {
+        opacity: 1;
+    }
+}
 section {
     height: 100vh;
     // min-height: 900px;
@@ -76,49 +123,113 @@ section {
 .section {
     &__about {
         position: absolute;
+        z-index: 20;
         background-color: rgb(0, 0, 0);
         & .aboutImg {
             position: absolute;
             bottom: 0;
-            left: -40px;
-            height: 80%;
+            left: 0;
+            height: 100%;
             width: 100%;
-            background: url(/img/img/探検家-wh.png);
-            background-position: left;
+            background: url(/img/bg/sectionBg1.jpg);
+            background-position: center;
+            background-size: cover;
             background-repeat: no-repeat;
-            & .textArea {
-                margin-left: 60%;
-                color: white;
-                & .ttl {
-                    font-size: 2.8rem;
-                    margin-bottom: 36px;
+            box-shadow: inset 0 0 60px 84px black;
+            & .about__inner {
+                @extend .inner;
+                display: flex;
+                & .sectionImg {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    width: 40%;
+                    padding-top: 10%;
+                    margin-right: 10%;
+                    &::before {
+                        content: "";
+                        display: block;
+                        padding-top: 100%;
+                    }
+                    & img {
+                        position: absolute;
+                        width: 80%;
+                        height: 80%;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        margin: auto;
+                        object-fit: cover;
+                    }
                 }
-
-                & .discription {
-                    font-size: 1.4rem;
+                & .textArea {
+                    padding-top: 15%;
+                    color: white;
+                    & .ttl {
+                        font-size: 2.8rem;
+                        margin-bottom: 36px;
+                    }
+    
+                    & .discription {
+                        font-size: 1.4rem;
+                    }
                 }
             }
         }
     }
     &__feture {
+        position: relative;
+        z-index: 0;
         background-color: rgb(194, 74, 74);
         & .fetureImg {
             height: 100%;
             width: 100%;
-            background: url(/img/img/オオカミ達-wh.png);
-            background-position: right;
+            background: url(/img/bg/sectionBg2.jpg);
+            background-position: center;
+            background-size: cover;
             background-repeat: no-repeat;
-            & .textArea {
-                margin-left: 10%;
-                padding-top: 160px;
-                color: white;
-                & .ttl {
-                    font-size: 2.8rem;
-                    margin-bottom: 36px;
+            box-shadow: inset 0 0 60px 84px black;
+            & .feture__inner {
+                @extend .inner;
+                display: flex;
+                & .sectionImg {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    width: 40%;
+                    padding-top: 10%;
+                    &::before {
+                        content: "";
+                        display: block;
+                        padding-top: 100%;
+                    }
+                    & img {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        margin: auto;
+                        object-fit: contain;
+                    }
                 }
-    
-                & .discription {
-                    font-size: 1.4rem;
+                & .textArea {
+                    width: 40%;
+                    margin-left: 10%;
+                    margin-right: 10%;
+                    padding-top: 15%;
+                    color: white;
+                    & .ttl {
+                        font-size: 2.8rem;
+                        margin-bottom: 36px;
+                    }
+        
+                    & .discription {
+                        font-size: 1.4rem;
+                    }
                 }
             }
         }
@@ -126,26 +237,57 @@ section {
     &__works {
         position: absolute;
         top: 300vh;
+        z-index: 20;
         background-color: rgb(46, 122, 46);
         & .worksImg {
             position: absolute;
             bottom: 0;
-            left: -40px;
-            height: 80%;
+            left: 0;
+            height: 100%;
             width: 100%;
-            background: url(/img/img/探検家-wh.png);
-            background-position: left;
+            background: url(/img/bg/sectionBg3.jpg);
+            background-position: center;
+            background-size: cover;
             background-repeat: no-repeat;
-            & .textArea {
-                margin-left: 60%;
-                color: white;
-                & .ttl {
-                    font-size: 2.8rem;
-                    margin-bottom: 36px;
+            box-shadow: inset 0 0 60px 84px black;
+            & .works__inner {
+                @extend .inner;
+                display: flex;
+                & .sectionImg {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    width: 40%;
+                    padding-top: 10%;
+                    margin-right: 10%;
+                    &::before {
+                        content: "";
+                        display: block;
+                        padding-top: 100%;
+                    }
+                    & img {
+                        position: absolute;
+                        width: 80%;
+                        height: 80%;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        margin: auto;
+                        object-fit: cover;
+                    }
                 }
-
-                & .discription {
-                    font-size: 1.4rem;
+                & .textArea {
+                    padding-top: 15%;
+                    color: white;
+                    & .ttl {
+                        font-size: 2.8rem;
+                        margin-bottom: 36px;
+                    }
+    
+                    & .discription {
+                        font-size: 1.4rem;
+                    }
                 }
             }
         }
@@ -155,20 +297,52 @@ section {
         & .contactImg {
             height: 100%;
             width: 100%;
-            background: url(/img/img/オオカミ達-wh.png);
-            background-position: right;
+            background: url(/img/bg/sectionBg4.jpg);
+            background-position: center;
+            background-size: cover;
             background-repeat: no-repeat;
-            & .textArea {
-                margin-left: 10%;
-                padding-top: 160px;
-                color: white;
-                & .ttl {
-                    font-size: 2.8rem;
-                    margin-bottom: 36px;
+            box-shadow: inset 0 0 60px 84px black;
+            & .contact__inner {
+                @extend .inner;
+                display: flex;
+                & .sectionImg {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    width: 40%;
+                    padding-top: 10%;
+                    margin-right: 10%;
+                    &::before {
+                        content: "";
+                        display: block;
+                        padding-top: 100%;
+                    }
+                    & img {
+                        position: absolute;
+                        width: 80%;
+                        height: 80%;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        margin: auto;
+                        object-fit: cover;
+                    }
                 }
-    
-                & .discription {
-                    font-size: 1.4rem;
+                & .textArea {
+                    width: 40%;
+                    margin-left: 10%;
+                    margin-right: 10%;
+                    padding-top: 15%;
+                    color: white;
+                    & .ttl {
+                        font-size: 2.8rem;
+                        margin-bottom: 36px;
+                    }
+        
+                    & .discription {
+                        font-size: 1.4rem;
+                    }
                 }
             }
         }
@@ -197,4 +371,43 @@ section {
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+footer {
+    height: 160px;
+    background-color: black;
+    & .footer__inner{
+        @extend .inner;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & .row {
+            display: flex;
+            margin-bottom: 14px;
+            & .autherInfo {
+                color: white;
+                & p {
+                    margin-bottom: 6px;
+                }
+                & span {
+                    display: block;
+                    margin-bottom: 6px;
+                }
+            }
+            & .footerMenu {
+                & ul {
+                    list-style: none;
+                    & li {
+                        margin-bottom: 6px;
+                        color: white;
+                    }
+                }
+            }
+        }
+        & .footer__copy {
+            margin: 0 auto;
+            color: white;
+            font-size: 14px;
+        }
+    }
 }
